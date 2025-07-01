@@ -9,6 +9,11 @@ const PORT = ENV.PORT
 
 app.use(express.json())
 
+// check the health of the server
+app.get('/api/health', (req, res) => {
+  res.status(200).json({ success: true, message: 'Server is healthy' })
+})
+
 // create a new favorite recipe
 // POST /api/favorites
 
